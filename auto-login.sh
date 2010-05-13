@@ -27,8 +27,15 @@ verbose=1
 # A bit unsecure because you have to store passwords here.
 # If you can see the script then probably you should be able to see 
 # the password as well 
+# Leave the password as a blank string("") if you wish to enter it when you run the script from terminal.
+# If password field is left blank, the password will not be visible on the screen when you enter it.
 username=USERNAME
 password=PASSWORD
+
+if(test "$password" = "")
+then  read -s password
+fi
+
 user_agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5"
 program_folder=~/.auto-login
 # Enter time in 24 hr format.
